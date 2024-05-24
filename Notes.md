@@ -89,6 +89,55 @@ $((a+b))
 Ou seja, a expressão deve estar entre 2 pares de parêntesis e antes dos parêntesis deve a haver um cifrão
 
 ---
+# Condicionais
+A estrutura condicional do bash funciona da seguinte forma:
+
+```
+if [[ condição 1 ]]; then
+    ação 1
+elif [[ condicao 2 ]]
+    ação 2
+else
+    ação 3
+fi    
+```
+Perceba que
+- A condição deve estar entre colchetes (`[]`)
+- Deve haver um espaço (` `) entre os colchetes e a condição
+- Após a condição deve haver um ponto de vírgula (`;`)
+- Deve finalizar com `fi` 
+
+Veja um exemplo:
+
+![if1](/images/if.png)
+
+### Operadores Lógicos
+- `||`: **OR** lógico
+- `&&`: **AND** lógico
+
+## Switch Case
+
+O *switch case* segue a estrutura à seguir: 
+```
+case $variable in
+    c1)
+        ...
+        ;;
+    c2)
+        ...
+        ;;
+    c3)
+        ...
+        ;;
+esac
+```
+
+- `case $variable in`: Indica que irá começar um *switch case*
+- `c1, c2, c3`: condições
+- `)`: separação entre condição e ação da condição
+- `;;`: fim das ações da condição
+- `esac`: finalizar o *switch case*  
+---
 # Comandos
 
 - `echo`: retorna para o terminal o argumento que lhe for dado.
