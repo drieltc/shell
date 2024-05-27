@@ -138,6 +138,58 @@ esac
 - `;;`: fim das ações da condição
 - `esac`: finalizar o *switch case*  
 ---
+
+# Repetição
+## While
+
+O `while` possui a seguinte estrutura
+
+```
+while [[ condicao ]]
+do
+    acao
+done
+```
+
+Alternativamente, temos:
+```
+while [[ condicao ]]; do
+    acao
+done
+```
+
+Veja o exemplo abaixo:
+
+![while](images/while.png)
+
+- Espaço entre a condicão e as duas chaves
+- `do` abaixo do `while`
+  
+## Until
+O `until` possui a seguinte estrutura:
+
+```
+until [[ condicao ]]
+do
+    acao
+done
+```
+Veja o exemplo abaixo:
+![until](images/until.png)
+
+## For
+O `for` segue a estrutura a seguir:
+```
+for {range}; do
+    acao
+done
+```
+
+Veja o exemplo abaixo:
+
+![for](images/for.png)
+
+---
 # Comandos
 
 - `echo`: retorna para o terminal o argumento que lhe for dado.
