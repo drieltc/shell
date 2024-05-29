@@ -1,5 +1,4 @@
 # Criar um arquivo shell (.sh)
-**Tutorial para se utilizar o BASH (Bourne Again Shell)**
 
 Através do terminal digite
 ```
@@ -29,25 +28,29 @@ Olhe o exemplo abaixo:
 
 ![permissoes](images/permissoes.png)
 
-O arquivo `himom.sh` possui permissão paenas para ler (*read*) e escrever (*write*). Isso é indicado pela string que aparece no começo da resposta `(-rw-...)`. Para que ele tenha permissão para executar, é necessário que haja um `x` no lugar do travessão após o `w`. 
+O arquivo `himom.sh` possui permissão apenas para ler (*read*) e escrever (*write*). Isso é indicado pela string que aparece no começo da resposta `(-rw-...)`. Para que ele tenha permissão para executar, é necessário que haja um `x` no lugar do travessão após o `w`. 
 
 ### Alterando a permissão
 Digite o comando
 ```
 chmod +x arquivo.sh
 ```
-Agora arquivo.sh pode ser executado através de 
+Agora arquivo.sh ppossui permissão de execução. Abaixo segue um exemplo de como executar o arquivo
 ```
 ./arquivo.sh
 ```
 ---
 
 # Variáveis e Argumentos
-Tudo o que vem após o comando de execução de um programa é chamado de argumento. Veja o exemplo abaixo:
+Tudo o que vem após o comando de execução de um programa é chamado de argumento. Veja a estrutura e o exemplo abaixo:
+
+```
+user@host:~$ ./arquivo.sh argumento
+```
 
 ![argumentos](images/argumentos.png)
 
-Nesse caso, `Adriel` é um argumento. Vejamos como isso funciona dentro do código:
+Nesse caso, `Adriel` é um argumento. Vejamos como isso funciona dentro desse código:
 
 ![bestDayEver.sh](images/argumentos2.png)
 
@@ -77,7 +80,7 @@ Entretanto, definir a variável desa forma não permite que ela seja usada, por 
 export variavel
 ```
 
-Entretanto, fazer isso diretamente pela linha de comando não permitirá que ela seja acessível para sempre; somente enquanto durar a presente conexão com o terminal. Para fazer com que uma variável sempre esteja acessíve, é necessário que ela seja adicionada no arquivo `.bashrc`.
+Entretanto, fazer isso diretamente pela linha de comando não permitirá que ela seja acessível para sempre; somente enquanto durar a presente conexão com o terminal. Para fazer com que uma variável sempre esteja acessíve, é necessário que ela seja **declarada** e **exportada** no arquivo `.bashrc`.
 
 ## Expressões aritméticas
 Para realizar uma expressão aritmética é necessário seguir a seguinte estrutura
@@ -189,6 +192,8 @@ Veja o exemplo abaixo:
 
 ![for](images/for.png)
 
+## Break e Continue
+
 ---
 # Comandos
 
@@ -202,4 +207,18 @@ Veja o exemplo abaixo:
     sleep 3
     //faz o programa dormir por 3 segundos
     ```
-- 
+- `nano`: abrir o editor de textos `nano`
+    ```
+    nano file.sh
+    //abre o arquivo file.sh diretamente do terminal
+    ```
+- mkdir
+- rm
+- rmdir
+- cp
+- mv
+- ls
+- chmod
+- cat
+- grep
+- find
