@@ -6,6 +6,7 @@
     - [Permissões de Usuário](#permissões-de-usuário)
       - [Alterando a permissão](#alterando-a-permissão)
 - [Variáveis e Argumentos](#variáveis-e-argumentos)
+  - [Tipos de Dados](#tipos-de-dados)
   - [Variáveis do Sistema](#variáveis-do-sistema)
   - [Criando as Próprias Variáveis](#criando-as-próprias-variáveis)
 - [Expressões Aritméticas](#expressões-aritméticas)
@@ -97,6 +98,26 @@ Caso quisessemos definir uma variável dentro do código, poderia ser da seguint
 
 E quando precisasse referenciá-la, basta digitar `$name` no local apropriado.
  
+## Tipos de Dados
+- **Inteiros**: Valores numéricos sem casas decimais, como *10, -25 ou 1000*
+  ```
+  num=10
+  echo "Inteiro: $num"
+  //Inteiro: 10
+  ```
+- **Strings**: Sequências de caracteres, como *"Olá Mundo!", "arquivo.txt" ou "[endereço de e-mail removido]"*
+  ```
+  texto="Este é um texto de exemplo."
+  echo "String: $texto"
+  //String: Este é um texto de exemplo
+  ```
+- **Booleanos**: Representam verdadeiro ou falso, geralmente armazenados como *1* para *verdadeiro* e *0* para *falso*
+  ```
+  ```
+- **Não existem números reais**
+- **Arrays**: Coleções ordenadas de valores do *mesmo tipo*, acessados por índices numéricos.
+- **Listas**: Similar a arrays, mas permitem armazenar valores de tipos diferentes e não possuem índices definidos.
+- **Hashes** (Dicionários): Coleções não ordenadas de pares chave-valor, onde cada chave é associada a um valor específico.
 
 ## Variáveis do Sistema
 - `$RANDOM`: Guarda um valor aleatório entre 0 e 32767
@@ -104,7 +125,7 @@ E quando precisasse referenciá-la, basta digitar `$name` no local apropriado.
 - `$USER`: Guarda o usuário atual
 - `$PWD`: Guarda o diretório atual
 - `$HOSTNAME`: Guarda o computador atual
-- 
+  
 ## Criando as Próprias Variáveis
 No próprio terminal você pode definir variaveis. Veja o exemplo à seguir
 ![twitter](images/twitter.png)
@@ -126,10 +147,68 @@ Para realizar uma expressão aritmética é necessário seguir a seguinte estrut
 $((a+b))
 ``` 
 
-Ou seja, a expressão deve estar entre 2 pares de parêntesis e antes dos parêntesis deve a haver um cifrão
+Ou seja, a expressão deve estar entre 2 pares de parêntesis e antes dos parêntesis deve a haver um cifrão. Pode haver espaço entre a expressão propriamente (no caso acima `a+b`) e os parênteses.
 
 ## Operadores Aritméticos
-
+- Soma (`+`): Retorna a soma de dois valores
+  ```
+  soma=$((10 + 5))
+  echo "Soma: $soma"
+  //Soma: 15
+  ```
+- Subtração (`-`): Retorna a diferença emtre dois valores
+  ```
+  subtracao=$((10 - 5))
+  echo "Subtração: $subtracao"
+  //Subtração: 5
+  ```
+- Multiplicação (`*`): Retorna o produt entre dois valores
+  ```
+  multiplicacao=$((10 * 50))
+  echo "Multiplicação: $multiplicacao"
+  //Multiplicação: 50
+  ```
+- Divisão Inteira (`/`): Retorna a divisão inteira entre dois números
+  ```
+  divisao=$((11 / 5))
+  echo "Divisão Inteira: $divisao"
+  //Divisão Inteira: 2
+  ```
+- Módulo (`%`): Retorna o módulo da divisão entre dois números
+  ```
+  modulo=$((11 % 5))
+  echo "Módulo: $modulo"
+  //Módulo: 1
+  ```
+- Incremento (`+=`): Adiciona um valor à variável
+  ```
+  num1=10
+  num1=$((num1 += 2))
+  echo "num1 após incremento: $num1"
+  //num1 após o incremento: 12
+  ```
+- Decremento (`-=`): Subtrai um valor da variável
+  ```
+  num2=5
+  num2=$((num2 -= 1))
+  echo "num2 após decremento: $num2"
+  //num2 após o decremento: 3
+  ```
+- Incremento pré-fixo (`++`): Adiciona um valor à variável e retorna o novo valor.
+- Decremento pré-fixo (`--`): Subtrai um valor da variável e retorna o novo valor.
+- Exponenciação (`**`): Eleva um valor à potência de outro.
+  ```
+  potencia=$((13 ** 2))
+  echo "Potência: $potencia"
+  //Potência: 169
+  ```
+- Negação (`-`): Inverte o sinal do valor.
+  ```
+  num1=13
+  negativo=$((-$num1))
+  echo "Negação: $negativo"
+  //Negação: -13
+  ```
 
 # Estruturas de Controle
 ## Estruturas Condicionais
