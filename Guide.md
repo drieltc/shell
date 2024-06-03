@@ -22,7 +22,7 @@
     - [Until](#until)
     - [Break e Continue](#break-e-continue)
 - [Funções](#funções)
-- [Comandos](#comandos)
+- [Comandos/Programas](#comandosprogramas)
   - [Navegação Pelo Sistema de Arquivos](#navegação-pelo-sistema-de-arquivos)
   - [Manipulação de Arquivos](#manipulação-de-arquivos)
     - [Leitura de Arquivos](#leitura-de-arquivos)
@@ -35,7 +35,7 @@
 - Editor de Textos: **Nano**
 - Linguagem do Guia: **Markdown**
 - Shell: **BASH**
-- 
+
 ## Criando um Arquivo
 1. Através do terminal digite
     ```
@@ -111,13 +111,23 @@ E quando precisasse referenciá-la, basta digitar `$name` no local apropriado.
   echo "String: $texto"
   //String: Este é um texto de exemplo
   ```
-- **Booleanos**: Representam verdadeiro ou falso, geralmente armazenados como *1* para *verdadeiro* e *0* para *falso*
+- **Booleanos**: Representam verdadeiro ou falso, armazenados como *1* para *verdadeiro* e *0* para *falso*
   ```
+  exemplo de booleano
   ```
 - **Não existem números reais**
 - **Arrays**: Coleções ordenadas de valores do *mesmo tipo*, acessados por índices numéricos.
+  ```
+  exemplo de array
+  ```
 - **Listas**: Similar a arrays, mas permitem armazenar valores de tipos diferentes e não possuem índices definidos.
+  ```
+  exemplo de lista
+  ```
 - **Hashes** (Dicionários): Coleções não ordenadas de pares chave-valor, onde cada chave é associada a um valor específico.
+  ```
+  exemplo de hash
+  ```
 
 ## Variáveis do Sistema
 - `$RANDOM`: Guarda um valor aleatório entre 0 e 32767
@@ -128,6 +138,7 @@ E quando precisasse referenciá-la, basta digitar `$name` no local apropriado.
   
 ## Criando as Próprias Variáveis
 No próprio terminal você pode definir variaveis. Veja o exemplo à seguir
+
 ![twitter](images/twitter.png)
 
 Entretanto, definir a variável desa forma não permite que ela seja usada, por exemplo, em processos filhos (scripts). Para isso é necessário exportar a variável. Isso é possível da seguinte maneira:
@@ -213,8 +224,65 @@ Ou seja, a expressão deve estar entre 2 pares de parêntesis e antes dos parên
 # Estruturas de Controle
 ## Estruturas Condicionais
 ### If-Else
+A estrutura condicional do bash funciona da seguinte forma:
+
+```
+if [[ condição 1 ]]; then
+    ação 1
+elif [[ condicao 2 ]]
+    ação 2
+else
+    ação 3
+fi    
+```
+Veja também um exemplo:
+
+![if](/images/ifExample.png)
+
+Perceba que:
+- A condição deve estar entre colchetes (`[]`)
+  - Após a condição deve haver um ponto de vírgula (`;`) seguido de um `then`, **ou**
+  - o `then` deve ser colocado na linha abaixo
+- Deve haver um espaço (` `) entre os colchetes e a condição
+- Deve finalizar com `fi` 
+
+
 ### Switch Case
+
+O *switch case* segue a estrutura à seguir: 
+```
+case $variable in
+    c1)
+        ...
+        ;;
+    c2)
+        ...
+        ;;
+    c3)
+        ...
+        ;;
+esac
+```
+
+Veja um exemplo:
+
+![case](/images/caseExample.png)
+
+Perceba que:
+- `case $variable in`: Indica que irá começar um *switch case*
+- `c1, c2, c3`: condições
+  - No exemplo, o que se quis dizer é: se class for 1, se class for 2, se class for 3...
+- `)`: é a separação entre condição e ação da condição
+- `;;`: indica o fim das ações da condição
+- `esac`: finaliza o *switch case*  
+
 ### Operadores Lógicos
+
+- `||`: **OR** lógico
+- `&&`: **AND** lógico
+- `-lt`:
+- `-eq`:
+- `-gt`:
 
 ## Repetição
 ### For
@@ -238,7 +306,7 @@ Outra maneira de se usar o laço `for` é definindo que a variável de controle 
 
 # Funções
 
-# Comandos
+# Comandos/Programas
 ## Navegação Pelo Sistema de Arquivos
 ## Manipulação de Arquivos
 ### Leitura de Arquivos

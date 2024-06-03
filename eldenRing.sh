@@ -9,7 +9,11 @@ echo "Welcome, loser. Select your starting class:
 read class
 
 case $class in
-
+	"macaco")
+		type="Macaco"
+		hp=100
+		attack=100
+		;;
 	1)
 		type="Samurai"
 		hp=10
